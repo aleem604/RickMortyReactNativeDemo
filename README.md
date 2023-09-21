@@ -1,1 +1,1 @@
-# RickMortyReactNativeDemo
+# ReactNativeDemo
