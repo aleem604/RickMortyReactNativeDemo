@@ -5,7 +5,7 @@ import jsonServer from "../api/jsonServer";
 import { TouchableOpacity } from "react-native-gesture-handler";
 import { useNavigation } from "@react-navigation/native";
 
-const SingleDetail = ({ location, resident }) => {
+const SingleDetail = ({ location, resident, nav }) => {
   const navigation = useNavigation();
   const [residentDetail, setResidentDetail] = useState({});
 
@@ -15,7 +15,6 @@ const SingleDetail = ({ location, resident }) => {
 
   const getDetail = () => {
     jsonServer.get(resident).then((res) => {
-      console.log(res.data);
       setResidentDetail(res.data);
     });
   };
@@ -23,7 +22,7 @@ const SingleDetail = ({ location, resident }) => {
   return (
     <TouchableOpacity
       onPress={() => {
-        navigation.navigate("Detail", {
+        nav.navigate("Detail", {
           location: location,
           detail: residentDetail,
         });
@@ -49,12 +48,12 @@ const SingleDetail = ({ location, resident }) => {
               {residentDetail.status} - {residentDetail.species}
             </Text>
             <Text>
-              <p style={styles.greyText}>Last Known location:</p>
-              <div style={styles.h3}>{location.name}</div>
+              <Text style={styles.greyText}>Last Known location: </Text>
+              <Text style={styles.h3}>{location.name}</Text>
             </Text>
             <Text>
-              <p style={styles.greyText}>First seen in:</p>
-              <div style={styles.h3}>{location.dimension}</div>
+              <Text style={styles.greyText}>First seen in:</Text>
+              <Text style={styles.h3}>{location.dimension}</Text>
             </Text>
           </View>
         </View>

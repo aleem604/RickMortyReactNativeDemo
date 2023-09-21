@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useState } from "react";
 import { View, Text, Button, Image, StyleSheet, TextInput } from "react-native";
 import Modal from "react-native-modal";
 import { Octicons } from "@expo/vector-icons";
@@ -14,7 +14,6 @@ const DetailScreen = ({ route }) => {
 
   const handleModal = () => {
     setModalVisible(false);
-    console.log("handle model");
   };
 
   return (
@@ -31,15 +30,9 @@ const DetailScreen = ({ route }) => {
         <View style={styles.row}>
           <View style={styles.cell2}>
             <Text style={styles.title}>{detail.name}</Text>
-            <Text style={styles.h4}>
-              Gender: <strong>{detail.gender}</strong>
-            </Text>
-            <Text style={styles.h4}>
-              Species: <strong>{detail.species}</strong>
-            </Text>
-            <Text style={styles.h4}>
-              Type: <strong>{detail.type}</strong>
-            </Text>
+            <Text style={styles.h4}>Gender: {detail.gender}</Text>
+            <Text style={styles.h4}>Species: {detail.species}</Text>
+            <Text style={styles.h4}>Type: {detail.type}</Text>
             <Text style={styles.colorWhite}>
               <Octicons
                 name="dot-fill"
@@ -50,16 +43,16 @@ const DetailScreen = ({ route }) => {
               {detail.status} - {detail.species}
             </Text>
             <Text>
-              <p style={styles.greyText}>
+              <Text style={styles.greyText}>
                 Last Known location:
-                <div style={styles.h3}>{location.name}</div>
-              </p>
+                <Text style={styles.h3}>{location.name}</Text>
+              </Text>
             </Text>
             <Text>
-              <p style={styles.greyText}>
+              <Text style={styles.greyText}>
                 First seen in:
-                <div style={styles.h3}>{location.dimension}</div>
-              </p>
+                <Text style={styles.h3}>{location.dimension}</Text>
+              </Text>
             </Text>
           </View>
         </View>
@@ -144,12 +137,14 @@ const styles = StyleSheet.create({
     color: "rgb(158, 158, 158)",
   },
   text: {
-    height: 30,
+    height: 50,
     borderBlockColor: "grey",
     backgroundColor: "white",
     paddingTop: 15,
     paddingBottom: 15,
     marginVertical: 20,
+    color: "black",
+    fontSize: 12,
   },
 });
 

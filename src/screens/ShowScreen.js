@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext } from "react";
 import { View, Text } from "react-native";
 import { Context } from "../context/LocationContext";
 import ResultsDetailGrid from "../components/ResultsDetailGrid";
@@ -9,7 +9,7 @@ const ShowScreen = ({ route, navigation }) => {
 
   return (
     <View>
-      <ResultsDetailGrid location={location} />
+      <ResultsDetailGrid location={location} nav={navigation} />
     </View>
   );
 };

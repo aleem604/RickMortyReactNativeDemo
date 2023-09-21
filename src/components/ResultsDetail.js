@@ -1,9 +1,11 @@
 import React from "react";
 import { View, Image, Text, StyleSheet } from "react-native";
-import jsonServer from "../api/jsonServer";
+import { useNavigation } from "@react-navigation/native";
 import { TouchableOpacity } from "react-native-gesture-handler";
 
 const ResultsDetail = ({ result }) => {
+  const navigation = useNavigation();
+
   return (
     <TouchableOpacity
       onPress={() => navigation.navigate("Show", { id: result.id })}
