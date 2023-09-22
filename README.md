@@ -4,7 +4,8 @@ React Native Project using Expo Redux and Navigation
 
 #steps to run projects
 
-#step 1
+# step 1
+
 Pull the repo first. Then run the following code on the terminal:
 
 ```
@@ -13,7 +14,8 @@ or
  yarn i  /  yarn install
 ```
 
-#step2
+# step2
+
 Write the following code to the terminal and
 
 ```
