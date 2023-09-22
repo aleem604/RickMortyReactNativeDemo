@@ -6,7 +6,12 @@ React Native Project using Expo Redux and Navigation
 
 #step 1
 Pull the repo first. Then run the following code on the terminal:
--npm i / npm install / yarn / yarn install
+
+```
+-npm i  / npm install
+or
+ yarn i  /  yarn install
+```
 
 #step2
 Write the following code to the terminal and
